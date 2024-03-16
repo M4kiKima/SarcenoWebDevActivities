@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Input on the total bill from the restaurant</h2>
+    
+    <label for="BILL">PHP</label>
+    <input type="text" id="BILL" placeholder="Bill Amount">
+
+    <h2>Service Quality?</h2>
+
+    <select id="tip"> <br>
+        <option>--Quality Services--</option>
+        <option value="0.3">30% - Excellent</option>
+        <option value="0.2">20% - Good</option>
+        <option value="0.15">15% - Average</option>
+        <option value="0.1">10% - Mediciore</option>
+    </select>
+    <br><br><br><br><br><br>
+
+    <label for="numPeople">How many people will share the bill?</label>
+    <br><br>
+    <input type="text" id="numPeople" placeholder="The number of people"> people
+    <button onclick="calculate()">Calculate</button>
+    <br><br><br>
+
+    <label>PHP</label>
+    <br><br>
+    <p> <span id="shareBill"></span> each</p>
+
+    <script type="text/javascript">
+        function calculate(){
+            var bill = document.getElementById("BILL").value;
+            var tipFee = document.getElementById("tip").value;
+            var tip = parseFloat(bill) * parseFloat(tipFee);
+            var totalBill = parseFloat(bill) + parseFloat(tip);
+            var numPeople = document.getElementById("numPeople").value;
+            var shareBill = parseFloat(totalBill) / parseFloat(numPeople);
+            document.getElementById("shareBill").textContent = shareBill;
+        }
+    </script>
+    
+</body>
+</html>

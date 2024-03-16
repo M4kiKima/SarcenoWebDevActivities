@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input id="numInput1" class="test"/>
+    <input id="numInput2" class="test"/>
+    <button onclick="displaySum()">Press to display sum</button>
+    <p>Sum: <span id="sumOutput"></span></p>
+  </div>
+
+  <script type="text/javascript">
+    function displaySum() {
+      var input1 = document.getElementById("numInput1").value;
+      var input2 = document.getElementById("numInput2").value;
+      var sum = parseFloat(input1) + parseFloat(input2);
+      document.getElementById("sumOutput").textContent = sum;
+    }
+  </script>
+</body>
+</html>
